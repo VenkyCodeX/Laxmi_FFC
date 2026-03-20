@@ -160,6 +160,14 @@
 </head>
 <body>
 
+  <!-- SPLASH SCREEN -->
+  <div id="splashScreen">
+    <img src="assets/Logo.png" alt="Logo" class="splash-logo"/>
+    <div class="splash-name">LAXMI FAST FOOD</div>
+    <div class="splash-sub">Hot &amp; Spicy • Shankar Nagar</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
 <header>
   <a href="index.html"><i class="fas fa-arrow-left"></i></a>
   <div>
@@ -189,6 +197,8 @@
   const API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:5000/api/orders'
     : 'https://laxmi-ffc-backend.onrender.com/api/orders';
+
+  setTimeout(() => document.getElementById('splashScreen').classList.add('hide'), 3000);
 
   const STEPS       = ['Order Received', 'Preparing', 'Ready', 'Completed'];
   const STEP_ICONS  = ['fa-check', 'fa-fire', 'fa-bell', 'fa-flag-checkered'];
