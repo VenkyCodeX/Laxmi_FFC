@@ -152,9 +152,47 @@
     .live-dot { width:7px; height:7px; border-radius:50%; background:#ff2b2b; animation:pulse 1.2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
 
-    @media(max-width:480px) {
+    /* SPLASH */
+    #splashScreen {
+      position:fixed; inset:0; background:#0d0d0d; z-index:9999;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      transition:opacity 0.5s ease;
+    }
+    #splashScreen.hide { opacity:0; pointer-events:none; }
+    .splash-logo { width:100px; height:100px; border-radius:16px; object-fit:contain; margin-bottom:16px; }
+    .splash-name { font-family:'Bebas Neue',sans-serif; font-size:32px; color:#ff2b2b; letter-spacing:3px; }
+    .splash-sub  { font-size:13px; opacity:0.5; margin-top:4px; margin-bottom:24px; }
+    .splash-bar  { width:160px; height:4px; background:#222; border-radius:4px; overflow:hidden; }
+    .splash-bar-fill { height:100%; width:0; background:#ff2b2b; border-radius:4px; animation:splashLoad 3s ease forwards; }
+    @keyframes splashLoad { to { width:100%; } }
+
+    /* BOTTOM NAV */
+    .bottom-nav {
+      position:fixed; bottom:0; left:0; right:0; z-index:200;
+      background:#111; border-top:1px solid #222;
+      display:flex; justify-content:space-around; align-items:center;
+      padding:8px 0 10px; display:none;
+    }
+    .bn-item {
+      display:flex; flex-direction:column; align-items:center; gap:3px;
+      color:#666; text-decoration:none; font-size:10px; font-weight:600;
+      transition:color 0.2s;
+    }
+    .bn-item i { font-size:18px; }
+    .bn-item.active, .bn-item:hover { color:#ff2b2b; }
+
+    @media(max-width:600px) {
+      .bottom-nav { display:flex; }
+      .wrap { padding-bottom:90px; }
       .t-label { font-size:9px; }
       .t-dot { width:24px; height:24px; font-size:10px; }
+      .oc-items { font-size:11px; }
+      .oc-addr { max-width:120px; }
+      header h1 { font-size:15px; }
+      header span { font-size:10px; }
+      .search-box { padding:18px 14px; }
+      .search-box h2 { font-size:16px; }
+      .dc-btn { font-size:12px; padding:9px 6px; }
     }
   </style>
 </head>
@@ -192,6 +230,14 @@
   <div id="resultArea"></div>
 
 </div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <a href="index.html" class="bn-item"><i class="fas fa-home"></i><span>Home</span></a>
+  <a href="menu.html" class="bn-item"><i class="fas fa-utensils"></i><span>Menu</span></a>
+  <a href="track.html" class="bn-item active"><i class="fas fa-map-marker-alt"></i><span>Track</span></a>
+  <a href="profile.html" class="bn-item"><i class="fas fa-user"></i><span>Profile</span></a>
+</nav>
 
 <script>
   const API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
