@@ -208,18 +208,19 @@
 
 <header>
   <a href="index.html"><i class="fas fa-arrow-left"></i></a>
-  <div>
-    <h1>🔥 Track Your Order</h1>
-    <span>Laxmi Fast Food – Shankar Nagar, Nanded</span>
+  <div style="flex:1">
+    <h1 id="headerTitle">🔥 Track Your Order</h1>
+    <span id="headerSub">Laxmi Fast Food – Shankar Nagar, Nanded</span>
   </div>
+  <button onclick="toggleLang()" id="langBtn" style="background:transparent;border:1px solid #ff2b2b;color:#ff2b2b;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;white-space:nowrap;margin-left:10px">🌐 हिंदी</button>
 </header>
 
 <div class="wrap">
 
   <div class="search-box">
     <i class="fas fa-search-location"></i>
-    <h2>Where's My Order?</h2>
-    <p>Enter your phone number to see your live order status</p>
+    <h2 id="searchTitle">Where's My Order?</h2>
+    <p id="searchSub">Enter your phone number to see your live order status</p>
     <div class="search-row">
       <input type="tel" id="phoneInput" maxlength="10" placeholder="Enter 10-digit phone number"
         onkeydown="if(event.key==='Enter') trackOrders()"/>
@@ -233,10 +234,10 @@
 
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav">
-  <a href="index.html" class="bn-item"><i class="fas fa-home"></i><span>Home</span></a>
-  <a href="menu.html" class="bn-item"><i class="fas fa-utensils"></i><span>Menu</span></a>
-  <a href="track.html" class="bn-item active"><i class="fas fa-map-marker-alt"></i><span>Track</span></a>
-  <a href="profile.html" class="bn-item"><i class="fas fa-user"></i><span>Profile</span></a>
+  <a href="index.html" class="bn-item"><i class="fas fa-home"></i><span id="bnHome">Home</span></a>
+  <a href="menu.html" class="bn-item"><i class="fas fa-utensils"></i><span id="bnMenu">Menu</span></a>
+  <a href="track.html" class="bn-item active"><i class="fas fa-map-marker-alt"></i><span id="bnTrack">Track</span></a>
+  <a href="profile.html" class="bn-item"><i class="fas fa-user"></i><span id="bnProfile">Profile</span></a>
 </nav>
 
 <script>
@@ -249,6 +250,52 @@
   const STEPS       = ['Order Received', 'Preparing', 'Ready', 'Completed'];
   const STEP_ICONS  = ['fa-check', 'fa-fire', 'fa-bell', 'fa-flag-checkered'];
   const STEP_LABELS = ['Received', 'Preparing', 'Ready', 'Done'];
+
+  // ── LANGUAGE ─────────────────────────────────────────
+  const T = {
+    en: {
+      headerTitle: '🔥 Track Your Order',
+      headerSub: 'Laxmi Fast Food – Shankar Nagar, Nanded',
+      searchTitle: "Where's My Order?",
+      searchSub: 'Enter your phone number to see your live order status',
+      placeholder: 'Enter 10-digit phone number',
+      langBtn: '🌐 हिंदी',
+      bnHome: 'Home', bnMenu: 'Menu', bnTrack: 'Track', bnProfile: 'Profile'
+    },
+    hi: {
+      headerTitle: '🔥 ऑर्डर ट्रैक करें',
+      headerSub: 'लक्ष्मी फास्ट फूड – शंकर नगर, नांदेड़',
+      searchTitle: 'मेरा ऑर्डर कहाँ है?',
+      searchSub: 'अपना फोन नंबर दर्ज करें और लाइव स्टेटस देखें',
+      placeholder: '10 अंकों का फोन नंबर',
+      langBtn: '🌐 English',
+      bnHome: 'होम', bnMenu: 'मेनू', bnTrack: 'ट्रैक', bnProfile: 'प्रोफाइल'
+    }
+  };
+
+  let lang = localStorage.getItem('lff_lang') || 'en';
+
+  function applyLang() {
+    const t = T[lang];
+    document.getElementById('headerTitle').textContent = t.headerTitle;
+    document.getElementById('headerSub').textContent   = t.headerSub;
+    document.getElementById('searchTitle').textContent = t.searchTitle;
+    document.getElementById('searchSub').textContent   = t.searchSub;
+    document.getElementById('phoneInput').placeholder  = t.placeholder;
+    document.getElementById('langBtn').textContent     = t.langBtn;
+    document.getElementById('bnHome').textContent      = t.bnHome;
+    document.getElementById('bnMenu').textContent      = t.bnMenu;
+    document.getElementById('bnTrack').textContent     = t.bnTrack;
+    document.getElementById('bnProfile').textContent   = t.bnProfile;
+  }
+
+  function toggleLang() {
+    lang = lang === 'en' ? 'hi' : 'en';
+    localStorage.setItem('lff_lang', lang);
+    applyLang();
+  }
+
+  applyLang();
 
   let liveIntervals = {};
 
