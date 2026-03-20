@@ -12,6 +12,14 @@
 </head>
 <body class="menu-page">
 
+  <!-- SPLASH SCREEN -->
+  <div id="splashScreen">
+    <img src="assets/Logo.png" alt="Logo" class="splash-logo"/>
+    <div class="splash-name">LAXMI FAST FOOD</div>
+    <div class="splash-sub">Hot &amp; Spicy • Shankar Nagar</div>
+    <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+  </div>
+
   <!-- TOP BAR -->
   <div class="menu-topbar">
     <a href="index.html" class="menu-back-btn"><i class="fas fa-arrow-left"></i></a>
@@ -204,5 +212,8 @@
 
   <script src="js/script.js"></script>
   <script src="js/profile.js"></script>
+  <script>
+    setTimeout(() => document.getElementById('splashScreen').classList.add('hide'), 2000);
+  </script>
 </body>
 </html>
