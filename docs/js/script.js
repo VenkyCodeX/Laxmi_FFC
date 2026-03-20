@@ -1016,6 +1016,7 @@ const translations = {
     useLocation: 'Use Location', confirmOrder: 'Confirm Order',
     myOrdersTitle: 'My Orders Today', myOrdersLabel: 'Enter your phone number',
     successTitle: 'Order Placed!', continueBrowsing: 'Continue Browsing', waConfirmBtn: 'Confirm on WhatsApp',
+    otpHint: '📞 You will receive OTP via phone call',
     langBtn: '🌐 हिंदी'
   },
   hi: {
@@ -1054,6 +1055,7 @@ const translations = {
     useLocation: 'लोकेशन', confirmOrder: 'ऑर्डर कन्फर्म करें',
     myOrdersTitle: 'आज के मेरे ऑर्डर', myOrdersLabel: 'अपना फोन नंबर दर्ज करें',
     successTitle: 'ऑर्डर हो गया!', continueBrowsing: 'ब्राउज़ करते रहें', waConfirmBtn: 'व्हाट्सएप पर कन्फर्म करें',
+    otpHint: '📞 OTP आपके फोन पर कॉल के जरिए आएगा',
     langBtn: '🌐 English'
   }
 };
@@ -1159,6 +1161,7 @@ function applyLanguage(lang) {
   const successH3 = q('.success-modal h3'); if (successH3) successH3.textContent = t.successTitle;
   const contBtn = q('.success-btns .btn-primary'); if (contBtn) contBtn.textContent = t.continueBrowsing;
   const waBtn = q('#waConfirm'); if (waBtn) waBtn.innerHTML = `<i class="fab fa-whatsapp"></i> ${t.waConfirmBtn}`;
+  const otpHintEl = q('#otpHintMsg'); if (otpHintEl) otpHintEl.innerHTML = `<i class="fas fa-phone-volume"></i> ${t.otpHint}`;
 }
 
 // ── SOLD OUT ITEMS ───────────────────────────────────────
