@@ -1,7 +1,7 @@
 ﻿// ── CONFIG ───────────────────────────────────────────────
 const BACKEND   = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
   ? 'http://localhost:5000'
-  : 'https://laxmi-ffc-backend.onrender.com';
+  : 'https://laxmi-ffc-backend-qpwx.onrender.com';
 const API_URL    = BACKEND + '/api/orders';
 const OTP_URL    = BACKEND + '/api/otp';
 const ITEMS_URL  = BACKEND + '/api/items';
