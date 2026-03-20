@@ -352,6 +352,13 @@ async function verifyOTP() {
 function showOrderForm() {
   if (!cart.length) { showToast('Add items to cart first!'); return; }
 
+  // Shop hours check
+  const hour = new Date().getHours();
+  if (hour < SHOP_OPEN || hour >= SHOP_CLOSE) {
+    showToast(`Shop is closed! Open ${SHOP_OPEN}:00 AM – ${SHOP_CLOSE - 12}:00 PM`);
+    return;
+  }
+
   // Minimum order check
   if (getCartTotal() < MIN_ORDER) {
     showToast(`Minimum order is ₹${MIN_ORDER}. Add ₹${MIN_ORDER - getCartTotal()} more.`);
