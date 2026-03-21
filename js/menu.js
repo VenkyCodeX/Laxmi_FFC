@@ -92,7 +92,31 @@ const menuLang = {
     successTitle: 'Order Placed!', continueBrowsing: 'Continue', waConfirmBtn: 'WhatsApp',
     myOrdersTitle: 'My Orders Today', myOrdersLabel: 'Enter your phone number',
     langBtn: '🌐 हिंदी',
-    bnHome: 'Home', bnMenu: 'Menu', bnSearch: 'Search', bnCart: 'Cart', bnProfile: 'Profile'
+    bnHome: 'Home', bnMenu: 'Menu', bnSearch: 'Search', bnCart: 'Cart', bnProfile: 'Profile',
+    secChinese: 'Chinese', secStarters: 'Starters', secSoups: 'Soups', secRice: 'Rice',
+    dishes: {
+      'chicken noodles':        'Chicken Noodles',
+      'veg noodles':            'Veg Noodles',
+      'double egg noodles':     'Double Egg Noodles',
+      'veg fried rice':         'Veg Fried Rice',
+      'egg fried rice':         'Egg Fried Rice',
+      'double egg fried rice':  'Double Egg Fried Rice',
+      'chicken fried rice':     'Chicken Fried Rice',
+      'double egg chicken rice':'Double Egg Chicken Rice',
+      'veg manchurian':         'Veg Manchurian',
+      'veg 65':                 'Veg 65',
+      'chicken manchurian':     'Chicken Manchurian',
+      'chilli chicken':         'Chilli Chicken',
+      'lollipop':               'Lollipop',
+      'chicken 65':             'Chicken 65',
+      'omelette':               'Omelette',
+      'anda bhurji':            'Anda Bhurji',
+      'veg soup':               'Veg Soup',
+      'chicken soup':           'Chicken Soup',
+      'manchow soup':           'Manchow Soup',
+      'veg triple rice':        'Veg Triple Rice',
+      'chicken triple rice':    'Chicken Triple Rice'
+    }
   },
   hi: {
     searchPlaceholder: 'व्यंजन खोजें...',
@@ -107,13 +131,77 @@ const menuLang = {
     useLocation: 'लोकेशन', confirmOrder: 'ऑर्डर कन्फर्म करें',
     successTitle: 'ऑर्डर हो गया!', continueBrowsing: 'जारी रखें', waConfirmBtn: 'व्हाट्सएप',
     myOrdersTitle: 'आज के मेरे ऑर्डर', myOrdersLabel: 'अपना फोन नंबर दर्ज करें',
+    langBtn: '🌐 मराठी',
+    bnHome: 'होम', bnMenu: 'मेनू', bnSearch: 'खोजें', bnCart: 'कार्ट', bnProfile: 'प्रोफाइल',
+    secChinese: 'चाइनीज़', secStarters: 'स्टार्टर', secSoups: 'सूप', secRice: 'राइस',
+    dishes: {
+      'chicken noodles':        'चिकन नूडल्स',
+      'veg noodles':            'वेज नूडल्स',
+      'double egg noodles':     'डबल एग नूडल्स',
+      'veg fried rice':         'वेज फ्राइड राइस',
+      'egg fried rice':         'एग फ्राइड राइस',
+      'double egg fried rice':  'डबल एग फ्राइड राइस',
+      'chicken fried rice':     'चिकन फ्राइड राइस',
+      'double egg chicken rice':'डबल एग चिकन राइस',
+      'veg manchurian':         'वेज मंचूरियन',
+      'veg 65':                 'वेज 65',
+      'chicken manchurian':     'चिकन मंचूरियन',
+      'chilli chicken':         'चिली चिकन',
+      'lollipop':               'लॉलीपॉप',
+      'chicken 65':             'चिकन 65',
+      'omelette':               'ऑमलेट',
+      'anda bhurji':            'अंडा भुर्जी',
+      'veg soup':               'वेज सूप',
+      'chicken soup':           'चिकन सूप',
+      'manchow soup':           'मंचो सूप',
+      'veg triple rice':        'वेज ट्रिपल राइस',
+      'chicken triple rice':    'चिकन ट्रिपल राइस'
+    }
+  },
+  mr: {
+    searchPlaceholder: 'पदार्थ शोधा...',
+    vegLabel: '🌿 शाकाहारी',
+    catAll: 'सर्व', catChinese: 'चायनीज', catStarters: 'स्टार्टर', catSoups: 'सूप', catRice: 'भात',
+    noResults: 'कोणताही पदार्थ सापडला नाही',
+    cartHeader: 'तुमची ऑर्डर', cartEmpty: 'कार्ट रिकामी आहे', cartEmptySub: 'मेनूमधून आयटम जोडा',
+    cartTotal: 'एकूण', placeOrder: 'ऑर्डर करा',
+    orderModalTitle: 'ऑर्डर पूर्ण करा',
+    labelName: 'तुमचे नाव', labelPhone: 'फोन नंबर', labelAddress: 'डिलिव्हरी पत्ता',
+    placeName: 'तुमचे पूर्ण नाव टाका', placePhone: '10 अंकी मोबाइल नंबर', placeAddress: 'तुमचा पूर्ण डिलिव्हरी पत्ता टाका',
+    useLocation: 'लोकेशन', confirmOrder: 'ऑर्डर कन्फर्म करा',
+    successTitle: 'ऑर्डर झाली!', continueBrowsing: 'पुढे जा', waConfirmBtn: 'व्हॉट्सअ‍ॅप',
+    myOrdersTitle: 'आजच्या माझ्या ऑर्डर', myOrdersLabel: 'तुमचा फोन नंबर टाका',
     langBtn: '🌐 English',
-    bnHome: 'होम', bnMenu: 'मेनू', bnSearch: 'खोजें', bnCart: 'कार्ट', bnProfile: 'प्रोफाइल'
+    bnHome: 'होम', bnMenu: 'मेनू', bnSearch: 'शोधा', bnCart: 'कार्ट', bnProfile: 'प्रोफाइल',
+    secChinese: 'चायनीज', secStarters: 'स्टार्टर', secSoups: 'सूप', secRice: 'भात',
+    dishes: {
+      'chicken noodles':        'चिकन नूडल्स',
+      'veg noodles':            'व्हेज नूडल्स',
+      'double egg noodles':     'डबल एग नूडल्स',
+      'veg fried rice':         'व्हेज फ्राइड राइस',
+      'egg fried rice':         'एग फ्राइड राइस',
+      'double egg fried rice':  'डबल एग फ्राइड राइस',
+      'chicken fried rice':     'चिकन फ्राइड राइस',
+      'double egg chicken rice':'डबल एग चिकन राइस',
+      'veg manchurian':         'व्हेज मंचुरियन',
+      'veg 65':                 'व्हेज 65',
+      'chicken manchurian':     'चिकन मंचुरियन',
+      'chilli chicken':         'चिली चिकन',
+      'lollipop':               'लॉलीपॉप',
+      'chicken 65':             'चिकन 65',
+      'omelette':               'ऑम्लेट',
+      'anda bhurji':            'अंडा भुर्जी',
+      'veg soup':               'व्हेज सूप',
+      'chicken soup':           'चिकन सूप',
+      'manchow soup':           'मंचो सूप',
+      'veg triple rice':        'व्हेज ट्रिपल राइस',
+      'chicken triple rice':    'चिकन ट्रिपल राइस'
+    }
   }
 };
 
 function applyMenuLanguage(lang) {
-  const t = menuLang[lang];
+  const t = menuLang[lang] || menuLang['en'];
   const q = sel => document.querySelector(sel);
   const qa = sel => document.querySelectorAll(sel);
 
@@ -126,6 +214,20 @@ function applyMenuLanguage(lang) {
   const catBtns = qa('.cat-btn span:last-child');
   ['catAll','catChinese','catStarters','catSoups','catRice'].forEach((k, i) => {
     if (catBtns[i]) catBtns[i].textContent = t[k];
+  });
+
+  // Translate section headings
+  document.querySelectorAll('.menu-section').forEach(sec => {
+    const key = 'sec' + sec.dataset.section.charAt(0).toUpperCase() + sec.dataset.section.slice(1);
+    const span = sec.querySelector('.ms-heading span:last-child');
+    if (span && t[key]) span.textContent = t[key];
+  });
+
+  // Translate dish names
+  document.querySelectorAll('.ms-item').forEach(item => {
+    const key = item.dataset.name;
+    const nameEl = item.querySelector('.ms-name');
+    if (nameEl && t.dishes[key]) nameEl.textContent = t.dishes[key];
   });
 
   const noRes = q('.menu-no-results p');
@@ -184,7 +286,8 @@ function applyMenuLanguage(lang) {
 }
 
 function toggleMenuLanguage() {
-  const next = (localStorage.getItem('lff_lang') || 'en') === 'hi' ? 'en' : 'hi';
+  const cycle = { en: 'hi', hi: 'mr', mr: 'en' };
+  const next = cycle[localStorage.getItem('lff_lang') || 'en'] || 'hi';
   localStorage.setItem('lff_lang', next);
   applyMenuLanguage(next);
 }
@@ -192,5 +295,5 @@ function toggleMenuLanguage() {
 // Apply saved language on load
 (function() {
   const saved = localStorage.getItem('lff_lang') || 'en';
-  if (saved === 'hi') applyMenuLanguage('hi');
+  if (saved !== 'en') applyMenuLanguage(saved);
 })();
