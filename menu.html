@@ -51,169 +51,223 @@
 
   <!-- CATEGORY FILTER -->
   <div class="menu-cats">
-    <button class="cat-btn active" data-filter="all">
-      <span class="cat-icon">🍽️</span><span>All</span>
-    </button>
-    <button class="cat-btn" data-filter="noodles">
-      <span class="cat-icon">🍜</span><span>Noodles</span>
-    </button>
-    <button class="cat-btn" data-filter="rice">
-      <span class="cat-icon">🍚</span><span>Rice</span>
-    </button>
-    <button class="cat-btn" data-filter="starters">
-      <span class="cat-icon">🍗</span><span>Starters</span>
-    </button>
-    <button class="cat-btn" data-filter="drinks">
-      <span class="cat-icon">🥤</span><span>Drinks</span>
-    </button>
+    <button class="cat-btn active" data-filter="all"><span class="cat-icon">🍽️</span><span>All</span></button>
+    <button class="cat-btn" data-filter="chinese"><span class="cat-icon">🍜</span><span>Chinese</span></button>
+    <button class="cat-btn" data-filter="starters"><span class="cat-icon">🍗</span><span>Starters</span></button>
+    <button class="cat-btn" data-filter="soups"><span class="cat-icon">🥣</span><span>Soups</span></button>
+    <button class="cat-btn" data-filter="rice"><span class="cat-icon">🍚</span><span>Rice</span></button>
   </div>
 
-  <!-- MENU GRID -->
-  <div class="menu-page-grid" id="menuPageGrid">
+  <!-- MENU SECTIONS -->
+  <div class="menu-sections" id="menuPageGrid">
 
-    <div class="mp-card" data-category="noodles" data-name="chicken noodles" data-veg="no">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&q=80" alt="Chicken Noodles" loading="lazy"/>
-        <div class="mp-badge">🔥 Bestseller</div>
-      </div>
-      <div class="mp-body">
-        <h3>Chicken Noodles</h3>
-        <p>Wok-tossed noodles with juicy chicken &amp; spicy sauce</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹80</span>
-          <button class="mp-add-btn" onclick="addToCart('Chicken Noodles',80)"><i class="fas fa-plus"></i></button>
+    <!-- CHINESE -->
+    <div class="menu-section" data-section="chinese">
+      <div class="ms-heading"><span class="ms-icon">🍜</span><span>Chinese</span></div>
+      <div class="ms-list">
+        <div class="ms-item" data-category="chinese" data-name="chicken noodles" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Chicken Noodles</span><span class="ms-tag ms-nonveg">🍗 Non-Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Chicken Noodles (Half)',70)">Half ₹70</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Chicken Noodles (Full)',120)">Full ₹120</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="chinese" data-name="veg noodles" data-veg="yes">
+          <div class="ms-left"><span class="ms-name">Veg Noodles</span><span class="ms-tag ms-veg">🌿 Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Veg Noodles (Half)',60)">Half ₹60</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Veg Noodles (Full)',100)">Full ₹100</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="chinese" data-name="double egg noodles" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Double Egg Noodles</span><span class="ms-tag ms-nonveg">🥚 Egg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Double Egg Noodles (Half)',70)">Half ₹70</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Double Egg Noodles (Full)',120)">Full ₹120</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="chinese" data-name="veg fried rice" data-veg="yes">
+          <div class="ms-left"><span class="ms-name">Veg Fried Rice</span><span class="ms-tag ms-veg">🌿 Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Veg Fried Rice (Half)',50)">Half ₹50</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Veg Fried Rice (Full)',90)">Full ₹90</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="chinese" data-name="egg fried rice" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Egg Fried Rice</span><span class="ms-tag ms-nonveg">🥚 Egg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Egg Fried Rice (Half)',60)">Half ₹60</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Egg Fried Rice (Full)',110)">Full ₹110</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="chinese" data-name="double egg fried rice" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Double Egg Fried Rice</span><span class="ms-tag ms-nonveg">🥚 Egg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Double Egg Fried Rice (Half)',70)">Half ₹70</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Double Egg Fried Rice (Full)',120)">Full ₹120</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="chinese" data-name="chicken fried rice" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Chicken Fried Rice</span><span class="ms-tag ms-nonveg">🍗 Non-Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Chicken Fried Rice (Half)',70)">Half ₹70</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Chicken Fried Rice (Full)',140)">Full ₹140</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="chinese" data-name="double egg chicken rice" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Double Egg Chicken Rice</span><span class="ms-tag ms-nonveg">🍗 Non-Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Double Egg Chicken Rice (Half)',80)">Half ₹80</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Double Egg Chicken Rice (Full)',140)">Full ₹140</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="mp-card" data-category="noodles" data-name="egg noodles" data-veg="no">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&q=80" alt="Egg Noodles" loading="lazy"/>
-      </div>
-      <div class="mp-body">
-        <h3>Egg Noodles</h3>
-        <p>Classic egg noodles tossed with veggies &amp; soy sauce</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹70</span>
-          <button class="mp-add-btn" onclick="addToCart('Egg Noodles',70)"><i class="fas fa-plus"></i></button>
+    <!-- STARTERS -->
+    <div class="menu-section" data-section="starters">
+      <div class="ms-heading"><span class="ms-icon">🍗</span><span>Starters</span></div>
+      <div class="ms-list">
+        <div class="ms-item" data-category="starters" data-name="veg manchurian" data-veg="yes">
+          <div class="ms-left"><span class="ms-name">Veg Manchurian</span><span class="ms-tag ms-veg">🌿 Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Veg Manchurian (Half)',50)">Half ₹50</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Veg Manchurian (Full)',90)">Full ₹90</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="starters" data-name="veg 65" data-veg="yes">
+          <div class="ms-left"><span class="ms-name">Veg 65</span><span class="ms-tag ms-veg">🌿 Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Veg 65 (Half)',50)">Half ₹50</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Veg 65 (Full)',90)">Full ₹90</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="starters" data-name="chicken manchurian" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Chicken Manchurian</span><span class="ms-tag ms-nonveg">🍗 Non-Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Chicken Manchurian (Half)',80)">Half ₹80</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Chicken Manchurian (Full)',120)">Full ₹120</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="starters" data-name="chilli chicken" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Chilli Chicken</span><span class="ms-tag ms-spicy">🌶️ Spicy</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Chilli Chicken (Half)',70)">Half ₹70</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Chilli Chicken (Full)',120)">Full ₹120</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="starters" data-name="lollipop" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Lollipop</span><span class="ms-tag ms-nonveg">🍗 Non-Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Lollipop (Half)',50)">Half ₹50</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Lollipop (Full)',60)">Full ₹60</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="starters" data-name="chicken 65" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Chicken 65</span><span class="ms-tag ms-spicy">🌶️ Spicy</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn ms-single" onclick="addToCart('Chicken 65',150)">₹150</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="starters" data-name="omelette" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Omelette</span><span class="ms-tag ms-nonveg">🥚 Egg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn ms-single" onclick="addToCart('Omelette',30)">₹30</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="starters" data-name="anda bhurji" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Anda Bhurji</span><span class="ms-tag ms-nonveg">🥚 Egg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn ms-single" onclick="addToCart('Anda Bhurji',40)">₹40</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="mp-card" data-category="noodles" data-name="veg noodles" data-veg="yes">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=400&q=80" alt="Veg Noodles" loading="lazy"/>
-        <div class="mp-badge mp-veg">🌿 Veg</div>
-      </div>
-      <div class="mp-body">
-        <h3>Veg Noodles</h3>
-        <p>Colorful veggies &amp; noodles in a savory sauce</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹60</span>
-          <button class="mp-add-btn" onclick="addToCart('Veg Noodles',60)"><i class="fas fa-plus"></i></button>
+    <!-- SOUPS -->
+    <div class="menu-section" data-section="soups">
+      <div class="ms-heading"><span class="ms-icon">🥣</span><span>Soups</span></div>
+      <div class="ms-list">
+        <div class="ms-item" data-category="soups" data-name="veg soup" data-veg="yes">
+          <div class="ms-left"><span class="ms-name">Veg Soup</span><span class="ms-tag ms-veg">🌿 Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn ms-single" onclick="addToCart('Veg Soup',30)">₹30</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="soups" data-name="chicken soup" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Chicken Soup</span><span class="ms-tag ms-nonveg">🍗 Non-Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn ms-single" onclick="addToCart('Chicken Soup',30)">₹30</button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-item" data-category="soups" data-name="manchow soup" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Manchow Soup</span><span class="ms-tag ms-spicy">🌶️ Spicy</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn ms-single" onclick="addToCart('Manchow Soup',50)">₹50</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="mp-card" data-category="rice" data-name="chicken fried rice" data-veg="no">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&q=80" alt="Chicken Fried Rice" loading="lazy"/>
-        <div class="mp-badge">🔥 Bestseller</div>
-      </div>
-      <div class="mp-body">
-        <h3>Chicken Fried Rice</h3>
-        <p>Aromatic fried rice loaded with tender chicken pieces</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹90</span>
-          <button class="mp-add-btn" onclick="addToCart('Chicken Fried Rice',90)"><i class="fas fa-plus"></i></button>
+    <!-- RICE -->
+    <div class="menu-section" data-section="rice">
+      <div class="ms-heading"><span class="ms-icon">🍚</span><span>Rice</span></div>
+      <div class="ms-list">
+        <div class="ms-item" data-category="rice" data-name="veg triple rice" data-veg="yes">
+          <div class="ms-left"><span class="ms-name">Veg Triple Rice</span><span class="ms-tag ms-veg">🌿 Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Veg Triple Rice (Half)',80)">Half ₹80</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Veg Triple Rice (Full)',140)">Full ₹140</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="mp-card" data-category="rice" data-name="egg fried rice" data-veg="no">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?w=400&q=80" alt="Egg Fried Rice" loading="lazy"/>
-      </div>
-      <div class="mp-body">
-        <h3>Egg Fried Rice</h3>
-        <p>Fluffy scrambled eggs tossed with seasoned rice</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹75</span>
-          <button class="mp-add-btn" onclick="addToCart('Egg Fried Rice',75)"><i class="fas fa-plus"></i></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="mp-card" data-category="rice" data-name="veg fried rice" data-veg="yes">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=80" alt="Veg Fried Rice" loading="lazy"/>
-        <div class="mp-badge mp-veg">🌿 Veg</div>
-      </div>
-      <div class="mp-body">
-        <h3>Veg Fried Rice</h3>
-        <p>Garden-fresh vegetables tossed in seasoned rice</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹65</span>
-          <button class="mp-add-btn" onclick="addToCart('Veg Fried Rice',65)"><i class="fas fa-plus"></i></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="mp-card" data-category="starters" data-name="chicken 65" data-veg="no">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?w=400&q=80" alt="Chicken 65" loading="lazy"/>
-        <div class="mp-badge mp-spicy">🌶️ Spicy</div>
-      </div>
-      <div class="mp-body">
-        <h3>Chicken 65</h3>
-        <p>Crispy deep-fried chicken with fiery spices</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹120</span>
-          <button class="mp-add-btn" onclick="addToCart('Chicken 65',120)"><i class="fas fa-plus"></i></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="mp-card" data-category="starters" data-name="chilli chicken" data-veg="no">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&q=80" alt="Chilli Chicken" loading="lazy"/>
-        <div class="mp-badge mp-spicy">🌶️ Spicy</div>
-      </div>
-      <div class="mp-body">
-        <h3>Chilli Chicken</h3>
-        <p>Indo-Chinese style chicken in bold chilli sauce</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹130</span>
-          <button class="mp-add-btn" onclick="addToCart('Chilli Chicken',130)"><i class="fas fa-plus"></i></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="mp-card" data-category="starters" data-name="veg manchurian" data-veg="yes">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80" alt="Veg Manchurian" loading="lazy"/>
-        <div class="mp-badge mp-veg">🌿 Veg</div>
-      </div>
-      <div class="mp-body">
-        <h3>Veg Manchurian</h3>
-        <p>Crispy veggie balls in tangy Manchurian gravy</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹90</span>
-          <button class="mp-add-btn" onclick="addToCart('Veg Manchurian',90)"><i class="fas fa-plus"></i></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="mp-card" data-category="drinks" data-name="cool drinks" data-veg="both">
-      <div class="mp-img-wrap">
-        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&q=80" alt="Cool Drinks" loading="lazy"/>
-      </div>
-      <div class="mp-body">
-        <h3>Cool Drinks</h3>
-        <p>Chilled beverages to cool down the spice</p>
-        <div class="mp-footer">
-          <span class="mp-price">₹30</span>
-          <button class="mp-add-btn" onclick="addToCart('Cool Drinks',30)"><i class="fas fa-plus"></i></button>
+        <div class="ms-item" data-category="rice" data-name="chicken triple rice" data-veg="no">
+          <div class="ms-left"><span class="ms-name">Chicken Triple Rice</span><span class="ms-tag ms-nonveg">🍗 Non-Veg</span></div>
+          <div class="ms-right">
+            <div class="ms-prices">
+              <button class="ms-price-btn" onclick="addToCart('Chicken Triple Rice (Half)',100)">Half ₹100</button>
+              <button class="ms-price-btn ms-full" onclick="addToCart('Chicken Triple Rice (Full)',140)">Full ₹140</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

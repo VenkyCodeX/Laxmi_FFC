@@ -18,6 +18,14 @@ document.querySelectorAll('.cat-btn').forEach(btn => {
   });
 });
 
+// ── SECTION VISIBILITY ───────────────────────────────────
+function updateSectionVisibility() {
+  document.querySelectorAll('.menu-section').forEach(sec => {
+    const hasVisible = [...sec.querySelectorAll('.ms-item')].some(i => !i.classList.contains('hidden'));
+    sec.classList.toggle('hidden', !hasVisible);
+  });
+}
+
 // ── SEARCH ────────────────────────────────────────────────
 function searchMenu(val) {
   const clear = document.getElementById('searchClear');
@@ -34,18 +42,19 @@ function clearSearch() {
 }
 
 function filterMenu(category, search) {
-  const cards = document.querySelectorAll('.mp-card');
+  const items = document.querySelectorAll('.ms-item');
   const q = (search || '').toLowerCase().trim();
   let visible = 0;
-  cards.forEach(card => {
-    const matchCat  = category === 'all' || card.dataset.category === category;
-    const matchName = !q || card.dataset.name.includes(q);
-    const veg       = card.dataset.veg; // 'yes', 'no', 'both'
+  items.forEach(item => {
+    const matchCat  = category === 'all' || item.dataset.category === category;
+    const matchName = !q || item.dataset.name.includes(q);
+    const veg       = item.dataset.veg;
     const matchVeg  = veg === 'both' || (vegMode ? veg === 'yes' : true);
     const show = matchCat && matchName && matchVeg;
-    card.classList.toggle('hidden', !show);
+    item.classList.toggle('hidden', !show);
     if (show) visible++;
   });
+  updateSectionVisibility();
   document.getElementById('menuNoResults').style.display = visible === 0 ? 'block' : 'none';
 }
 
@@ -72,7 +81,7 @@ const menuLang = {
   en: {
     searchPlaceholder: 'Search dishes...',
     vegLabel: '🌿 Veg',
-    catAll: 'All', catNoodles: 'Noodles', catRice: 'Rice', catStarters: 'Starters', catDrinks: 'Drinks',
+    catAll: 'All', catChinese: 'Chinese', catStarters: 'Starters', catSoups: 'Soups', catRice: 'Rice',
     noResults: 'No dishes found',
     cartHeader: 'Your Order', cartEmpty: 'Your cart is empty', cartEmptySub: 'Add items from the menu',
     cartTotal: 'Total', placeOrder: 'Place Order',
@@ -88,7 +97,7 @@ const menuLang = {
   hi: {
     searchPlaceholder: 'व्यंजन खोजें...',
     vegLabel: '🌿 वेज',
-    catAll: 'सभी', catNoodles: 'नूडल्स', catRice: 'राइस', catStarters: 'स्टार्टर', catDrinks: 'ड्रिंक्स',
+    catAll: 'सभी', catChinese: 'चाइनीज़', catStarters: 'स्टार्टर', catSoups: 'सूप', catRice: 'राइस',
     noResults: 'कोई व्यंजन नहीं मिला',
     cartHeader: 'आपका ऑर्डर', cartEmpty: 'कार्ट खाली है', cartEmptySub: 'मेनू से आइटम जोड़ें',
     cartTotal: 'कुल', placeOrder: 'ऑर्डर करें',
@@ -115,7 +124,7 @@ function applyMenuLanguage(lang) {
   if (vegLabel) vegLabel.textContent = t.vegLabel;
 
   const catBtns = qa('.cat-btn span:last-child');
-  ['catAll','catNoodles','catRice','catStarters','catDrinks'].forEach((k, i) => {
+  ['catAll','catChinese','catStarters','catSoups','catRice'].forEach((k, i) => {
     if (catBtns[i]) catBtns[i].textContent = t[k];
   });
 
