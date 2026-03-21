@@ -585,7 +585,7 @@ async function handleRazorpayPayment(upiApp) {
 
     const cfg = UPI_APP_CONFIG[upiApp];
     const options = {
-      key: 'rzp_test_XXXXXXXXXXXXXXXX', // ← replace with your Razorpay Key ID
+      key: 'rzp_live_STnypuBTxj2t1F',
       amount: data.amount,
       currency: data.currency,
       name: 'Laxmi Fast Food',
